@@ -19,12 +19,12 @@ public class ClosestVal {
 		
 	}
 	
-	public static <Integer> int closestAns(TreeNode<Integer> n, int val) {
+	public static int closestAns(TreeNode<Integer> n, int val) {
 		int ans = minDiff(n, val);
 		return ans + val;
 	}
 
-	private static <Integer> int minDiff(TreeNode<Integer> t, int val) {
+	private static int minDiff(TreeNode<Integer> t, int val) {
 		if (t == null)
 			return Integer.MAX_VALUE;
 		if (t.data < val)

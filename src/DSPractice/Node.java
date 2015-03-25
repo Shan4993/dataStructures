@@ -4,6 +4,30 @@ public class Node {
 
 }
 
+class ListNode {
+	int data;
+	ListNode next;
+	
+	public ListNode(){
+	}
+
+	public ListNode(int data) {
+		this.data = data;
+		this.next = null;
+	}
+
+	public void printList() {
+		if (this != null) {
+			ListNode curr = this;
+			while (curr != null) {
+				System.out.print(curr.data + "->");
+				curr = curr.next;
+			}
+			System.out.println("TAIL");
+		}
+	}
+}
+
 
 class TreeNode<T> {
 	public T data;
@@ -15,9 +39,6 @@ class TreeNode<T> {
 		left = right = null;
 	}
 
-	public TreeNode(String string) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public void prePrint() {
 		if (this != null) {

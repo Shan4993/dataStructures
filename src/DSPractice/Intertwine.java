@@ -2,29 +2,29 @@ package DSPractice;
 
 public class Intertwine {
 	public static void main(String[] args){
-		List head = new List(1);
-		head.next = new List(2);
-		head.next.next = new List(3);
-		head.next.next.next = new List(4);
-		head.next.next.next.next = new List(5);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
 		head.printList();
 
 		intertwine(head);
 		head.printList();
 	}
 
-	public static void intertwine(List L) {
-		List mid = locateMid(L);
-		List firstHalf = L;
-		List secondHalf = reverse(mid.next);
+	public static void intertwine(ListNode L) {
+		ListNode mid = locateMid(L);
+		ListNode firstHalf = L;
+		ListNode secondHalf = reverse(mid.next);
 		mid.next = null;
 		L = stich(firstHalf, secondHalf);
 		
 	}
 
-	public static List locateMid(List L) { // return head of the second list
-		List slow = L;
-		List fast = L;
+	public static ListNode locateMid(ListNode L) { // return head of the second list
+		ListNode slow = L;
+		ListNode fast = L;
 		while (fast != null && fast.next != null) {
 			fast = fast.next.next;
 			slow = slow.next;
@@ -32,22 +32,22 @@ public class Intertwine {
 		return slow;
 	}
 
-	public static List reverse(List L) { // reverse the second list and returns
+	public static ListNode reverse(ListNode L) { // reverse the second list and returns
 											// head
 		if (L == null)
 			return null;
 		if (L.next == null)
 			return L;
 
-		List reverseList = reverse(L.next);
+		ListNode reverseList = reverse(L.next);
 		L.next.next = L;
 		L.next = null;
 		return reverseList;
 	}
 
-	public static List stich(List L1, List L2) { // joins the lists together
-		List finalList = new List(0);
-		List curr = finalList;
+	public static ListNode stich(ListNode L1, ListNode L2) { // joins the lists together
+		ListNode finalList = new ListNode(0);
+		ListNode curr = finalList;
 		int turn = 1;
 		while (L1 != null && L2 != null) {
 			if (turn == 1) {
@@ -70,23 +70,3 @@ public class Intertwine {
 	}
 }
 
-class List {
-	int data;
-	List next;
-
-	public List(int data) {
-		this.data = data;
-		this.next = null;
-	}
-
-	public void printList() {
-		if (this != null) {
-			List curr = this;
-			while (curr != null) {
-				System.out.print(curr.data + "->");
-				curr = curr.next;
-			}
-			System.out.println("TAIL");
-		}
-	}
-}

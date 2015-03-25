@@ -1,16 +1,16 @@
 package DSPractice;
 
 public class ListToBST {
-	private static List h;
+	private static ListNode h;
 
 	public static void main(String[] args){
-		List head = new List(1);
-		head.next = new List(2);
-		head.next.next = new List(3);
-		head.next.next.next = new List(4);
-		head.next.next.next.next = new List(5);
-		head.next.next.next.next.next = new List(6);
-		head.next.next.next.next.next.next = new List(7);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
+		head.next.next.next.next.next = new ListNode(6);
+		head.next.next.next.next.next.next = new ListNode(7);
 		head.printList();
 		Tree root = sortedListToBST(head);
 
@@ -27,7 +27,7 @@ public class ListToBST {
 	}
 	
 	
-	public static Tree sortedListToBST(List head) {
+	public static Tree sortedListToBST(ListNode head) {
 		if (head == null)
 			return null;
 
@@ -37,9 +37,9 @@ public class ListToBST {
 	}
 
 	// get list length
-	public static int getLength(List head) {
+	public static int getLength(ListNode head) {
 		int len = 0;
-		List p = head;
+		ListNode p = head;
 		while (p != null) {
 			len++;
 			p = p.next;

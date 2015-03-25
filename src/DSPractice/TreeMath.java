@@ -2,15 +2,13 @@ package DSPractice;
 
 import java.util.Stack;
 
-import LinkedList.TreeNode;
-
 public class TreeMath {
 
 	public static void main(String[] args){
-		TreeNode myTree = new TreeNode("+");
-		myTree.left = new TreeNode("*");	myTree.right = new TreeNode("*");
-		myTree.left.left = new TreeNode("12");	myTree.left.right = new TreeNode("3");
-		myTree.right.left = new TreeNode("4");	myTree.right.right = new TreeNode("5");
+		TreeNode<String> myTree = new TreeNode<String>("+");
+		myTree.left = new TreeNode<String>("*");  myTree.right = new TreeNode<String>("*");
+		myTree.left.left = new TreeNode<String>("12");	myTree.left.right = new TreeNode<String>("3");
+		myTree.right.left = new TreeNode<String>("4");	myTree.right.right = new TreeNode<String>("5");
 		
 		solve(myTree);
 		
@@ -19,7 +17,7 @@ public class TreeMath {
 	
 	private static Stack<Integer> stack = new Stack<Integer>();
 	
-	public static void solve(TreeNode tree){
+	public static void solve(TreeNode<String> tree){
 		if(tree != null){
 			solve(tree.left);
 			solve(tree.right);

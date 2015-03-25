@@ -18,9 +18,7 @@ public class StringPalin {
 		return true;
 	}
 	
-	public static boolean isRotatePalindrome(String s){
-		char[] letter = s.toCharArray();
-		
+	public static boolean isRotatePalindrome(String s){	
 		for(int i=0 ; i<s.length() ; i++){
 				String leftStr = s.substring(0,i);
 				String rightStr = s.substring(i);

@@ -64,7 +64,7 @@ public class ConstructTree {
 			}
 		}
 		int leftTreeSize = inOrderRootInd - inStart; // 4-0=4
-		int rightTreeSize = inEnd - inOrderRootInd; // 11-4=7
+		//int rightTreeSize = inEnd - inOrderRootInd; // 11-4=7
 
 		Tree root = new Tree(pre[preStart]);
 		root.left = createTree(pre, preStart + 1, preStart + leftTreeSize, in,
