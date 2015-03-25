@@ -102,7 +102,7 @@ class Tree {
 
 	public Tree(int data) {
 		this.data = data;
-		// left = right = null;
+		left = right = null;
 	}
 
 	public void inOrderPrint() {

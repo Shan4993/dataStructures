@@ -4,17 +4,17 @@ public class Node {
 
 }
 
+
+
 class ListNode {
 	int data;
 	ListNode next;
-	
-	public ListNode(){
-	}
 
 	public ListNode(int data) {
 		this.data = data;
 		this.next = null;
 	}
+
 
 	public void printList() {
 		if (this != null) {
@@ -28,11 +28,23 @@ class ListNode {
 	}
 }
 
+class DLLNode {
+	int data;
+	DLLNode next;
+	DLLNode prev;
+	
+	public DLLNode(int data){
+		this.data = data;
+		this.next = this.prev = null;
+	}
+	
+}
+
 
 class TreeNode<T> {
-	public T data;
-	public TreeNode<T> left;
-	public TreeNode<T> right;
+	T data;
+	TreeNode<T> left;
+	TreeNode<T> right;
 
 	public TreeNode(T data) {
 		this.data = data;
