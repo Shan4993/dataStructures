@@ -19,7 +19,7 @@ public class Combinations {
 	private static void combine(int start) {
 		for(int i=start;i<in.length();i++){
 			out.append(in.charAt(i));
-			System.out.println(out.toString());
+			System.out.println(out);
 			if(i<in.length()){
 				combine(i+1);
 			}

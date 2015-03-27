@@ -8,7 +8,7 @@ public class GraphBFS {
 	private static HashMap<Person, Person[]> adjList = new HashMap<Person, Person[]>();
 
 	GraphBFS(HashMap<Person, Person[]> adjList) {
-		this.adjList = adjList;
+		GraphBFS.adjList = adjList;
 	}
 
 	public static void bfs(Person source) {
@@ -52,7 +52,8 @@ public class GraphBFS {
 		map.put(sohail, new Person[] { shan, luis });
 		map.put(jerry, new Person[] {});
 
-		GraphBFS.bfs(shan);
+		GraphBFS g = new GraphBFS(map);
+		g.bfs(shan);
 		
 		System.out.println(kami.getDistance() + " " + kami.getLastFriend());
 		System.out.println(mim.getDistance() + " " + mim.getLastFriend());

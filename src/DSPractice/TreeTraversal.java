@@ -23,11 +23,12 @@ public class TreeTraversal {
 		preOrder(root);
 	}
 	
+	
 	public static void inOrder(Tree root) {
 		if (root == null)
 			return;
-		Tree curr = root;
 		Stack<Tree> stack = new Stack<Tree>();
+		Tree curr = root;
 		while (curr != null || !stack.isEmpty()) {
 			if (curr != null) {
 				stack.push(curr);

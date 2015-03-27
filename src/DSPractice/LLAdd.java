@@ -1,6 +1,6 @@
 package DSPractice;
 
-public class AddLL {
+public class LLAdd {
 	//adding two numbers represented as LL in reverse and returning result in new list
 	//ex: 3->6->8 
 	//  + 9->9->2 

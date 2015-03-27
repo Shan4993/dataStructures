@@ -3,7 +3,7 @@ package DSPractice;
 public class Sqrt {
 
 	public static void main(String[] arg) {
-		System.out.println(sqrt(64));
+		System.out.println(sqrt(101));
 	}
 
 	public static double sqrt(double a) {
