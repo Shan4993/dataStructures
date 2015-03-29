@@ -4,7 +4,7 @@ public class Subsets {
 	// Q: Find all subsets of a set
 	// Ex: The set {1,2,3} has subsets {1,2},{1,3},{2,3},{1},{2},{3},{1,2,3}
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3, 4, 5 };
+		int[] arr = { 1, 2, 3};
 
 		printSubset(arr);
 
@@ -12,6 +12,7 @@ public class Subsets {
 
 		printSubsetSizeK(arr, 3);
 	}
+	
 
 	public static void printSubsetSizeK(int[] arr, int k) {
 		boolean[] ifPrint = new boolean[arr.length];

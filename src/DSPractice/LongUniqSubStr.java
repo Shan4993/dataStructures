@@ -10,6 +10,7 @@ public class LongUniqSubStr {
 		System.out.println(ans);
 	}
 
+	
 	public static int longestUnqSubStr(String s){
 		int longestLen = 0;
 		int tempLong = 0;

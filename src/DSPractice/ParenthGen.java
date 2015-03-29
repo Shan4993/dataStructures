@@ -3,8 +3,9 @@ package DSPractice;
 public class ParenthGen {
 	//Q: Given a number of parenthesis pairs, generate all combinations
 	public static void main (String[] args){
-		generate(3,3,"");
+		generate(5,5,"");
 	}
+	
 	
 	public static void generate(int leftRemain, int rightRemain, String currentStr){
 		if(rightRemain == 0){

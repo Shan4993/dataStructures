@@ -16,7 +16,7 @@ public class MaxSubArr {
 		System.out.println(answer);
 
 	}
-
+	
 	public static int findMaxSub(int[] arr) {
 		int tempSum = 0;
 		int maxSum = 0;

@@ -4,7 +4,7 @@ public class Robot {
 	// Q:Count the number of paths a robot can in the top left corner(0,0)
 	// can take to get to the bottom right corner(mxn)
 
-	public static int numOfPaths(int m, int n) {// 3,5
+	public static int numOfPaths(int m, int n) {
 		
 		int[][] grid = new int[m][n];
 		
@@ -35,10 +35,12 @@ public class Robot {
 			}
 			System.out.println();
 		}
+		System.out.println();
+		
 	}
 
 	public static void main(String[] args) {
-		int ans = numOfPaths(0,0);
+		int ans = numOfPaths(3,3);
 		System.out.println();
 		System.out.println(ans);
 	}

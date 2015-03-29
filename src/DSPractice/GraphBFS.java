@@ -11,7 +11,7 @@ public class GraphBFS {
 		GraphBFS.adjList = adjList;
 	}
 
-	public static void bfs(Person source) {
+	public void bfs(Person source) {
 		Queue<Person> q = new LinkedList<Person>();
 		q.add(source);
 		source.setVisited(true);

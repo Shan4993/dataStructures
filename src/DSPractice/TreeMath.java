@@ -3,8 +3,13 @@ package DSPractice;
 import java.util.Stack;
 
 public class TreeMath {
-
+	//Q: Solve a arithmetic tree, exampple below
 	public static void main(String[] args){
+		//        +
+		//    *      *
+		// 12   3   4   5
+		// (12*3)+(4*5) = 36 + 20 = 56
+		//
 		TreeNode<String> myTree = new TreeNode<String>("+");
 		myTree.left = new TreeNode<String>("*");  myTree.right = new TreeNode<String>("*");
 		myTree.left.left = new TreeNode<String>("12");	myTree.left.right = new TreeNode<String>("3");
@@ -30,9 +35,7 @@ public class TreeMath {
 			} else{
 				stack.push(Integer.parseInt((String) tree.data));
 			}
-		}
-		
-		
+		}	
 	}
 	
 	private static int compute(char op, int a, int b) {

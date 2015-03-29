@@ -31,7 +31,8 @@ public class Permutation {
 	}
 	
 	public static void main(String[] args){
-		Permutation p = new Permutation("abcd");
+		Permutation p = new Permutation("abc");
 		p.permute();
+		System.out.println();
 	}
 }

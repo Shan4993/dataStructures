@@ -4,8 +4,13 @@ public class Sqrt {
 
 	public static void main(String[] arg) {
 		System.out.println(sqrt(101));
-	}
+		System.out.println(sqrt(96));
+		System.out.println(sqrt(64));
+		System.out.println(sqrt(.25));
 
+
+	}
+	
 	public static double sqrt(double a) {
 		if (a < 0)
 			return -1;
@@ -20,7 +25,6 @@ public class Sqrt {
 
 		while (end - start > precision) {
 			double mid = (start + end) / 2;
-			System.out.println("Mid value is: " + mid);
 			double midSqr = mid * mid;
 			if (midSqr == a)
 				return mid;
