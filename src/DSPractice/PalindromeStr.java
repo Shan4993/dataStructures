@@ -1,7 +1,7 @@
 package DSPractice;
 
 public class PalindromeStr {
-	//Q: Verify if a string is a palindrome or not
+	//Q: Verify if a string is a rotated palindrome or not
 	//Ex: "racecar" <-> "racecar" is true but "motor"<->"rotom" is not
 	
 

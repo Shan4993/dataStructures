@@ -5,6 +5,7 @@ public class LongestPalin {
 	//This is solved in quadratic time (n^2) with space complexity of the strings 
 	//    being built as we search for the biggest palindrome
 	//Have to check for even and odd length palindromes 
+	//Source: http://goo.gl/0OgsLX
 	public static void main(String[] args){
 		String answer = longestPalin("123234567898768");
 		System.out.println(answer);

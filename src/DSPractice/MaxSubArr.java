@@ -3,6 +3,8 @@ package DSPractice;
 import java.util.Random;
 
 public class MaxSubArr {
+	//Q: Find max value subarray. 
+	// This can be done in linear time
 	public static void main(String[] args) {
 		int[] arr = new int[15];
 		Random r = new Random();
@@ -12,31 +14,23 @@ public class MaxSubArr {
 			System.out.print(arr[i] + ", ");
 		}
 		System.out.print("}\n");
-		int answer = findMaxSub(arr);
+		int answer = findMax(arr);
 		System.out.println(answer);
 
 	}
 	
-	public static int findMaxSub(int[] arr) {
-		int tempSum = 0;
-		int maxSum = 0;
-
-		int tempSumStartInd = 0, maxStartInd = 0, maxEndInd = 0;
-		for (int i = 0; i < arr.length; i++) {
-			int futureSum = tempSum + arr[i];
-			if (futureSum > 0) {
-				tempSum = futureSum;
-				if (tempSum > maxSum) {
-					maxSum = tempSum;
-					maxStartInd = tempSumStartInd;
-					maxEndInd = i;
-				}
-			} else {
-				tempSum = 0;
-				tempSumStartInd = i;
-			}
-		}
-		return maxSum;
+	public static int findMax(int[] arr){ //Kadane's Algorithm
+	    int maxEndingHere = 0, maxSoFar = 0;
+	    for(int i=0;i<arr.length;i++){
+	        maxEndingHere += arr[i];
+	        if(maxEndingHere < 0){
+	            maxEndingHere = 0;
+	        } 
+	        if(maxSoFar<maxEndingHere){
+	            maxSoFar = maxEndingHere;
+	        }
+	    }
+	    return maxSoFar;
 	}
 
 }

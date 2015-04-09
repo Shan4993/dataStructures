@@ -2,9 +2,9 @@ package DSPractice;
 
 public class TwoSumPairs {
 	//Q: Print all pairs of values in sorted array that sum to m
-	// This alg takes linear time and is done in place
+	// This algorithm takes linear time and is done in place
 	public static void printPairs(int[] arr, int m){
-		if(arr.length == 0 || arr.length == 1) return;
+		if(arr.length < 2) return;
 		int start = 0;
 		int end = arr.length-1;
 		while(start<end){

@@ -1,8 +1,8 @@
 package DSPractice;
 
 public class ReverseInt {
-	//Reverse an integer
-	//Look out for edge cases such as negative number or single digit numbers
+	// Q:Reverse an integer
+	// Look out for edge cases such as negative number or single digit numbers
 	//
 	public static void main(String[] args){
 		int answer = reverse(3954); //pos
@@ -16,6 +16,10 @@ public class ReverseInt {
 	}
 	
 	public static int reverse(int n){
+		if(n>-10 && n<10){
+	        return n;
+	    }  
+		
 		int newNum = 0;
 		boolean isNeg = false;
 		if(n < 0){

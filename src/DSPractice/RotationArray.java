@@ -1,6 +1,9 @@
 package DSPractice;
 
 public class RotationArray {
+	//Q: Find rotation index of an array, assuming array was sorted originally
+	// Takes lgn time with binary search
+	// Source: http://goo.gl/0OgsLX
 	public static void main(String[] args){
 		int[] array1 = {4,5,6,7,8,9,1};
 		int[] array2 = {6,7,1,2,3,4,5};
@@ -9,9 +12,6 @@ public class RotationArray {
 		System.out.println("Rotations: " + rotationCount(array1));
 		System.out.println("Rotations: " + rotationCount(array2));
 		System.out.println("Rotations: " + rotationCount(array3));
-		
-		
-		
 	}
 	
 	public static int rotationCount(int[] arr) {

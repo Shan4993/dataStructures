@@ -2,20 +2,30 @@ package DSPractice;
 
 public class LLReverse {
 	//Q: Reverse a linked list and return the new head
-	public static ListNode reverse(ListNode node){
-		
+	// Source: http://goo.gl/0OgsLX
+	
+	public static ListNode rev(ListNode head){
+		ListNode back = null;
+		ListNode curr = head.next;
+		while(curr != null){
+			head.next = back;
+			back = head;
+			if(curr != null){
+				head = curr;
+			}
+			curr = curr.next;
+		}
+		head.next = back;
+		return head;
+	}
+	
+	public static ListNode reverse(ListNode node){	
 		if(node == null || node.next == null){
 			return node;
 		}
-		
-		ListNode remaining = reverse(node.next);
 
-		ListNode p = remaining;
-		while(p.next != null){ //have to iterate to the end of remaining
-			p = p.next; //this iterates further and further as reverse list grows in size
-		}
-		
-		p.next = node;
+		ListNode remaining = reverse(node.next);
+		node.next.next = node;
 		node.next = null;
 		return remaining;
 	}
@@ -39,5 +49,7 @@ public class LLReverse {
 		print(head);
 		ListNode newHead = reverse(head);
 		print(newHead);
+		ListNode newestHead = rev(newHead);
+		print(newestHead);
 	}
 }

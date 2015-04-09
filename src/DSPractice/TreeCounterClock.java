@@ -1,6 +1,6 @@
 package DSPractice;
 
-public class CounterClockTree {
+public class TreeCounterClock {
 	public static void main(String[] args) {
 		//     10
 		//   5       15
@@ -34,14 +34,14 @@ class BinaryTree {
 		postOrderOnly();
 	}
 
-	private boolean isLeaf(BinaryTree t) {
-		return (t != null) && 
-				(t.left == null) && 
-				(t.right == null);
+	private boolean isLeaf() {
+		return (this != null) && 
+				(this.left == null) && 
+				(this.right == null);
 	}
 
 	private void preOrderOnly() {
-		if (this != null && !isLeaf(this))
+		if (this != null && !isLeaf())
 			System.out.print(data + ">");
 		if (this.left != null)
 			left.preOrderOnly();
@@ -52,7 +52,7 @@ class BinaryTree {
 			return;
 		if (this.left != null)
 			left.inOrderLeavesOnly();
-		if (this.left == null && this.right == null)
+		if (isLeaf())
 			System.out.print(data + ">");
 		if (this.right != null)
 			right.inOrderLeavesOnly();
@@ -61,7 +61,7 @@ class BinaryTree {
 	private void postOrderOnly() {
 		if (this.right != null)
 			right.postOrderOnly();
-		if (this != null && !isLeaf(this))
+		if (this != null && !isLeaf())
 			System.out.print(data + ">");
 	}
 }

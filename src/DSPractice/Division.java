@@ -1,7 +1,8 @@
 package DSPractice;
 
 public class Division {
-
+	//Q: Implement division without using the operator
+	//Source: http://goo.gl/0OgsLX
 	public static void main(String[] args){
 		int ans = divide(100,5);
 		System.out.println("The answer is: "+ans);

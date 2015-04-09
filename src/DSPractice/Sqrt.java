@@ -7,8 +7,7 @@ public class Sqrt {
 		System.out.println(sqrt(96));
 		System.out.println(sqrt(64));
 		System.out.println(sqrt(.25));
-
-
+		System.out.println((int)sqrt(9));
 	}
 	
 	public static double sqrt(double a) {

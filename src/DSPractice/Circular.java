@@ -17,7 +17,7 @@ public class Circular {
 		head = insert(head, 50); // 5->10->15->20->30->50->HEAD
 		head.printCircular();
 	}
-
+	
 	public static CircularList insert(CircularList head, int val) {
 		if (head == null) // no nodes in the list
 			return new CircularList(val);

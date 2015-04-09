@@ -3,6 +3,7 @@ package DSPractice;
 public class Subsets {
 	// Q: Find all subsets of a set
 	// Ex: The set {1,2,3} has subsets {1,2},{1,3},{2,3},{1},{2},{3},{1,2,3}
+	// Source: http://goo.gl/0OgsLX
 	public static void main(String[] args) {
 		int[] arr = { 1, 2, 3};
 
@@ -21,10 +22,9 @@ public class Subsets {
 
 	public static void printSubset(int[] arr) {
 		// Figure out size of all possible subsets and print them in order
+		boolean[] ifPrint = new boolean[arr.length];
 		for (int i = 0; i <= arr.length; i++) {
-			boolean[] ifPrint = new boolean[arr.length];
-			printSubset(arr, ifPrint, 0, i); // addresses each size so single
-												// subsets then up from there
+			printSubset(arr, ifPrint, 0, i); // addresses each size so single										// subsets then up from there
 		}
 	}
 

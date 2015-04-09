@@ -2,19 +2,22 @@ package DSPractice;
 
 public class ArrSortedNumOccur {
 	//Q: Find number of occurances of an element in a sorted array
+	//Source: http://goo.gl/0OgsLX	
+	
 	public static int numOfOccur(int[] arr, int start, int end, int k){
-		if(end<start) return 0;
-		if(arr[start] > k) return 0;
-		if(arr[end] < k) return 0;
-		if(arr[start] == k && arr[end] == k) return end-start+1;
+		if(start>end) return 0;
+		if(arr[start]>arr[end]) return 0;
+		if(k<arr[start]) return 0;
+		if(k>arr[end]) return 0;
+		if(k == arr[start] && k == arr[end]) return end-start+1;
 		
 		int mid = (start+end)/2;
-		if(arr[mid] > k){//somewhere in left subarray
-			return numOfOccur(arr,start,mid-1,k);
-		} else if(arr[mid] < k){//somewhere in right subarray
+		if(k>arr[mid]){ //target is somewhere on the right half
 			return numOfOccur(arr,mid+1,end,k);
-		} else{
-			return numOfOccur(arr,start,mid-1,k)+numOfOccur(arr,mid+1,end,k)+1;
+		} else if(k<arr[mid]){ // target is somewhere on the left half
+			return numOfOccur(arr,start,mid-1,k);
+		} else{ //found a match, check to the left and right for possible duplicates
+			return numOfOccur(arr,start,mid-1,k) + numOfOccur(arr,mid+1,end,k) + 1; // + 1 is for the one just found
 		}
 	}
 	

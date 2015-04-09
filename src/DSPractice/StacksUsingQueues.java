@@ -10,23 +10,22 @@ public class StacksUsingQueues {
 	public void push(int n) {
 		q1.add(n);
 	}
-
-	public int pop() {
-		if(q1.isEmpty()){
-			return -1;
-		}
-		if (q2.isEmpty()) {
-			while (q1.size() != 1) {
-				q2.add(q1.remove());
-			}
-			int popMe = q1.remove();
-			Queue<Integer> temp = q1;
-			q1 = q2;
-			q2 = temp;
-			return popMe;
-		}
-		return -1;
-	}
+	
+    public int pop(){
+        if(isEmpty()) return -1;
+        else if(q2.isEmpty()){
+            while(q1.size() != 1){
+                q2.add(q1.remove());
+            }
+            int popMe = q1.remove();
+            Queue<Integer> temp = q1;
+            q1 = q2;
+            q2 = temp;
+            return popMe;
+        } else{
+            return -1;
+        }
+    }
 
 	public boolean isEmpty() {
 		return (q1.isEmpty() && q2.isEmpty());

@@ -1,31 +1,33 @@
 package DSPractice;
 
-public class BSTClosestVal {
+public class TreeClosestVal {
 	// Q: Find closest value to a given number in a BST
-	public static int getClosestValue(Tree node, int m){
-		int min = minDiff(node,m);
+	// Source: http://goo.gl/0OgsLX
+
+	public static int getClosestValue(Tree node, int m) {
+		int min = minDiff(node, m);
 		return m + min;
 	}
-	
+
 	public static int minDiff(Tree node, int m) {
-		if(node == null){
+		if (node == null) {
 			return Integer.MAX_VALUE;
 		}
-		if(node.data>m){
-			return smallestDiff(node.data-m, minDiff(node.left,m));
-		} else { //if(node.data<m)
-			 return smallestDiff(node.data-m, minDiff(node.right,m));
-		} 
+		if (node.data > m) {
+			return smallestDiff(node.data - m, minDiff(node.left, m));
+		} else { // if(node.data<m)
+			return smallestDiff(node.data - m, minDiff(node.right, m));
+		}
 	}
 
 	public static int smallestDiff(int a, int b) {
-		return (Math.abs(a)<Math.abs(b))?a:b;
+		return (Math.abs(a) < Math.abs(b)) ? a : b;
 	}
 
 	public static void main(String[] args) {
-		//         20
-		//   10          30
-		//  5   15    25    35
+		//          20
+		//    10         30
+		//  5    15   25    35
 		// 1 6 13 17 22 27 33 37
 		Tree root = new Tree(20);
 		root.left = new Tree(10);

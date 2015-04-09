@@ -1,6 +1,6 @@
 package DSPractice;
 
-public class SwapPairs {
+public class LLSwapPairs {
 	//Q: Swap pairs in a linked list using no extra space
 	//ex: 1->2->3->4  turns into 2->1->4->3
 	public static ListNode swapPairs(ListNode head){
@@ -14,15 +14,6 @@ public class SwapPairs {
 		}
 	}
 	
-	public static void print(ListNode head){
-		ListNode p = head;
-		while(p != null){
-			System.out.print(p.data + ", ");
-			p = p.next;
-		}
-		System.out.println();
-	}
-	
 	public static void main(String[] args){
 		//1->2->3->4->5->6 
 		ListNode head = new ListNode(1);
@@ -31,9 +22,9 @@ public class SwapPairs {
 		head.next.next.next = new ListNode(4);
 		head.next.next.next.next = new ListNode(5);
 		head.next.next.next.next.next = new ListNode(6);
-		print(head);
+		head.printList();
 		
 		ListNode newHead = swapPairs(head);
-		print(newHead);
+		newHead.printList();
 	}
 }

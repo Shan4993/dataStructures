@@ -3,21 +3,14 @@ package DSPractice;
 public class BSTValidate {
 	//Q: Verify that a tree is a binary search tree
 	public static boolean isValid(Tree node, int min, int max){
-		if(node == null){
+		if(node == null) 
 			return true;
-		}
 		
-		if(node.data > max){
+		if(node.data > max || node.data < min) 
 			return false;
-		} 
-		if(node.data < min){
-			return false;
-		}
-		
+	
 		return isValid(node.left,min,node.data) && isValid(node.right,node.data,max);
 	}
-	
-	
 	
 	public static void main(String[] args){
 		//		   20

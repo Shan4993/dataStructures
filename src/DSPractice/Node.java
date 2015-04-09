@@ -37,7 +37,15 @@ class DLLNode {
 		this.data = data;
 		this.next = this.prev = null;
 	}
-	
+
+	public void print(){
+		DLLNode p = this;
+		while(p.next!=null){
+			System.out.print(p.data+"<->");
+			p = p.next;
+		}
+		System.out.println(p.data);
+	}
 }
 
 

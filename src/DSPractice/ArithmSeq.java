@@ -2,6 +2,7 @@ package DSPractice;
 
 public class ArithmSeq {
 	//Q: Find the missing term in a arithmetic sequence
+	//Source: HackerRank
 	
 	public static int findMissing(int[] arr, int size) {
 		//Formula: (n/2 * (a_1 + a_2))

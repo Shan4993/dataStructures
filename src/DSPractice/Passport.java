@@ -2,6 +2,7 @@ package DSPractice;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class Passport {
 	// Q. Given a stack of passports, find out if a given route is possible. 
@@ -68,12 +69,6 @@ public class Passport {
 		} else {
 			System.out.println("Not valid connection");
 		}
-
-		
-		int[][] temp = new int[][]{{1,2,3},
-					 			   {4,5,6},
-					 			   {7,8,9}};
-		System.out.println(temp[1][2]);
 	}
 
 	private static HashSet<String> visited = new HashSet<String>();
@@ -83,7 +78,7 @@ public class Passport {
 		if (start.equals(end)) {
 			return true;
 		} else {
-			String dest[] = routes.get(start);
+			String[] dest = routes.get(start);
 			visited.add(start);
 			for (String airport : dest) {
 				if (!visited.contains(airport)) {
@@ -96,13 +91,4 @@ public class Passport {
 		}
 	}
 
-	/*
-	 * public static boolean isValid(String start, String end, HashMap<String,
-	 * String[]> routes) { if (start.equals(end)) {
-	 * System.out.println("WE MADE ITTTTTTTT"); return true; } else { String[]
-	 * dest = routes.get(start); visited.add(start); for (int i = 0; i <
-	 * dest.length; i++) { if (!visited.contains(dest[i])) {
-	 * System.out.println("Checking airport " + dest[i]); if(isValid(dest[i],
-	 * end, routes)){ return true; } } } return false; } }
-	 */
 }

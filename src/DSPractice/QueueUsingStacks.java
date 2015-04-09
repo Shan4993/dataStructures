@@ -8,6 +8,7 @@ public class QueueUsingStacks {
 	
 	Stack<Integer> s1 = new Stack<Integer>();
 	Stack<Integer> s2 = new Stack<Integer>();
+
 	
 	public void enqueue(int n){
 		s1.push(n);

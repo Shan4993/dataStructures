@@ -1,6 +1,7 @@
 package DSPractice;
 
 public class Intertwine {
+	
 	public static void main(String[] args){
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);
@@ -25,9 +26,12 @@ public class Intertwine {
 	public static ListNode locateMid(ListNode L) { // return head of the second list
 		ListNode slow = L;
 		ListNode fast = L;
-		while (fast != null && fast.next != null) {
-			fast = fast.next.next;
-			slow = slow.next;
+		while (fast.next != null) {
+			fast = fast.next;
+			while(fast.next != null){
+				fast = fast.next;
+				slow = slow.next;
+			}
 		}
 		return slow;
 	}

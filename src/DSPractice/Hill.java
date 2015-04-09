@@ -23,7 +23,7 @@ public class Hill {
 				last++;
 			}else{
 				int possibleMin = arr[i]-k;
-				if(last < possibleMin){//is the last value trule smaller then the possible min of the current value
+				if(last < possibleMin){//is the last value truly smaller then the possible min of the current value
 					last = possibleMin;
 				}else{
 					last++;

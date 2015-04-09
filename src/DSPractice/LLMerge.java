@@ -30,8 +30,6 @@ public class LLMerge {
 			}
 			return newList.next;
 		}
-		
-
 	}
 
 	private static void print(ListNode mergedList) {

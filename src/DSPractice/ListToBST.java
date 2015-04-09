@@ -20,10 +20,6 @@ public class ListToBST {
 
 		root.preOrderPrint();
 		System.out.println();
-		
-		
-//		List newHead = BSTtoList(root);
-//		newHead.printList();
 	}
 	
 	
@@ -58,9 +54,9 @@ public class ListToBST {
 
 		Tree left = sortedListToBST(start, mid - 1);
 		Tree root = new Tree(h.data);
-
 		h = h.next;
 		Tree right = sortedListToBST(mid + 1, end);
+
 		root.left = left;
 		root.right = right;
 

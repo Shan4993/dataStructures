@@ -2,8 +2,11 @@ package DSPractice;
 
 public class ParenthGen {
 	//Q: Given a number of parenthesis pairs, generate all combinations
+	// Space complexity is the height of the implicit stack due to recursive calls
+	// Source: http://goo.gl/0OgsLX
+	
 	public static void main (String[] args){
-		generate(5,5,"");
+		generate(3,3,"");
 	}
 	
 	

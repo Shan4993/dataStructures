@@ -20,15 +20,15 @@ public class Telephone {
 			results.add(prefix);
 			return;
 		} else{
-			String letters = PHONE[input.charAt(offset)-'0'];
-			for(int i=0;i<letters.length();i++){
-				combine(prefix+letters.charAt(i),input,offset+1,results);
+			String key = PHONE[input.charAt(offset)-'0'];
+			for(int i=0;i<key.length();i++){
+				combine(prefix+key.charAt(i),input,offset+1,results);
 			}
 		}
 	}
 
 	public static void main(String[] args){
-		ArrayList<String> res = combinations("789");
+		ArrayList<String> res = combinations("23");
 		for(String str : res){
 			System.out.println(str);
 		}
