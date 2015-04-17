@@ -2,8 +2,6 @@ package DSPractice;
 
 import java.util.Stack;
 
-
-
 public class TreeTraversal {
 	public static void main(String[] args){
 		//      10
@@ -18,11 +16,12 @@ public class TreeTraversal {
 		root.right.right = new Tree(20);
 		root.right.left = new Tree(13);
 		
+		
 		inOrder(root);
 		System.out.println();
 		preOrder(root);
 	}
-	
+
 	
 	public static void inOrder(Tree root) {
 		if (root == null)
