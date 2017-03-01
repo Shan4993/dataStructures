@@ -1,21 +1,28 @@
-package DSPractice;
+import java.util.*;
 
-public class Fibonacci {
-	// Q: Return nth fibonacci number
+
+public class Fibonacci { 
 	
-	public static void nthFib(int n){
-		int ans = fib(n-1); //adjust 1
-		System.out.println(ans);
-	}
-	
-	public static int fib(int n){
-		if(n == 0) return 0;
-		if(n == 1) return 1;
-		return fib(n-1) + fib(n-2);
+	public static int nthFib(int n){
+		if(n<0) throw new IllegalArgumentException("error");
+		if(n == 0 || n == 1) return n;
+		int prevPrev = 0;
+		int prev = 1;
+		int curr = 0;
+		
+		for(int i=1;i<n;i++){
+			curr = prevPrev + prev;
+			prevPrev = prev;
+			prev = curr;
+		}
+		return curr;
 	}
 
-	public static void main(String args[]) {
-		System.out.print("The 5th fibonacci number is ");
-		nthFib(5);
+	public static void main(String[] args){
+		System.out.println(nthFib(1)); //1
+		System.out.println(nthFib(2)); //1
+		System.out.println(nthFib(3)); //2
+		System.out.println(nthFib(4)); //3
 	}
+	
 }

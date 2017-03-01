@@ -1,38 +1,46 @@
-package DSPractice;
-
 public class ArrBalPoint {
-	//Q: Find the point where the left subarray and right subarray are equal
-	//Ex: {2,3,7,10,-5} balance point is 7 because 10 is total on each side
-	// This would require O(3n) or just O(n) for 3 passes through the array.  Requires additional space of two arrays.
+	// Q: Find the point where the left subarray and right subarray are equal
+	// Ex: {2,3,7,10,-5} balance point is 7 because 10 is total on each side
+	// This would require O(3n) or just O(n) for 3 passes through the array.
+	// Requires additional space of two arrays.
 	// Source: http://goo.gl/0OgsLX
+	
+	
+	public static void main(String[] args) {
+		int[] arr = new int[] {2, 2, 3, 7, 10, -5 ,2};
+		int index = findBalIndex(arr);
+		if (index == -1) {
+			System.out.println("No balance");
+		}
+		System.out.println("Index: " + index);
+		System.out.println("Value: " + arr[index]);
+	}
 
-	public static int findBal(int[] arr){
-		int[] leftSums = new int[arr.length];
-		int[] rightSums = new int[arr.length];
-		int i=0;
-		leftSums[0] = arr[0];
-		for(i=1;i<arr.length;i++){//add up values from left side
-			leftSums[i] = arr[i] + leftSums[i-1]; 
+	
+	public static int findBalIndex(int[] arr) {
+		// create leftArr then rightArr
+		// who ever is higher adds the next one towards the middle
+		// if either hits goes over, no balance
+		int[] leftArr = new int[arr.length];
+		int[] rightArr = new int[arr.length];
+
+		leftArr[0] = arr[0];
+
+		for (int i = 1; i < arr.length; i++) {
+			leftArr[i] = arr[i] + leftArr[i - 1];
 		}
-		rightSums[arr.length-1] = arr[arr.length-1];
-		for(i=arr.length-2;i>=0;i--){//add up values from right side
-			rightSums[i] += arr[i] + rightSums[i+1];
+		rightArr[arr.length - 1] = arr[arr.length - 1];
+
+		for (int j = arr.length - 2; j >= 0; j--) {
+			rightArr[j] = arr[j] + rightArr[j + 1];
+
 		}
-		
-		for(i=0;i<arr.length;i++){//where they match is the balance point
-			if(leftSums[i] == rightSums[i]){
-				return i;
+		for (int k = 0; k < arr.length; k++) {
+			if (leftArr[k] == rightArr[k]) {
+				return k;
 			}
 		}
+
 		return -1;
 	}
-	
-	public static void main(String[] args){
-		int[] arr = new int[]{1,2,3,4,5,100,10,5};
-		int ans = findBal(arr);
-		System.out.println("Balance point is at index: " +ans);
-	}
-
 }
-
-

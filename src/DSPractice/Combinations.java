@@ -1,5 +1,3 @@
-package DSPractice;
-
 public class Combinations {
 	// Q: Provide all combinations of an input string 
 	// Ex: abc and cba are the same thing so order doesnt matter therefore # of results is not n!
@@ -28,7 +26,7 @@ public class Combinations {
 	}
 	
 	public static void main (String[] args){
-		Combinations c = new Combinations("wxyz");
+		Combinations c = new Combinations("abc");
 		c.combine();
 	}
 }

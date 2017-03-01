@@ -1,38 +1,37 @@
-package DSPractice;
+import java.util.*;
 
 public class Permutation {
-	//Q: Print all the permutations of a string. 
-	//   Number of permutations is n! where n is length of string
-	//   Apply recursion so that we select a value for current position and permute the rest of the string
-	//	 When the string reaches the appropriate size, print it and return. Repeat.
-	private StringBuilder out = new StringBuilder();
-	private boolean[] used;
-	private final String in;
-	
-	Permutation(final String s){
-		in = s;
-		used = new boolean[s.length()];
-	}
-	
-	public void permute(){
-		if(in.length() == out.length()){
-			System.out.println(out);
-			return;
-		} else{
-			for(int i=0;i<in.length();i++){
-				if(used[i]) continue;
-				out.append(in.charAt(i));
-				used[i] = true;
-				permute();
-				used[i] = false;
-				out.setLength(out.length()-1);
-			}
+
+	public static Set<String> getPermutations(String inputString) {
+
+		if (inputString.length() <= 1) {
+			Set<String> set = new HashSet<String>();
+			set.add(inputString);
+			return set;
 		}
+
+		String allCharsExceptLast = inputString.substring(0,
+				inputString.length() - 1);
+		char lastChar = inputString.charAt(inputString.length() - 1);
+
+		Set<String> permutationsOfAllCharsExceptLast = getPermutations(allCharsExceptLast);
+
+		Set<String> permutations = new HashSet<String>();
+		for (String permOfAllCharsExceptLast : permutationsOfAllCharsExceptLast) {
+			for (int pos = 0; pos <= allCharsExceptLast.length(); pos++) {
+				String res = permOfAllCharsExceptLast.substring(0,pos) + lastChar + permOfAllCharsExceptLast.substring(pos);
+				permutations.add(res);
+			}
+
+		}
+		return permutations;
+
 	}
-	
-	public static void main(String[] args){
-		Permutation p = new Permutation("abc");
-		p.permute();
-		System.out.println();
+
+	public static void main(String[] args) {
+		Set<String> set = getPermutations("abc");
+		for (String word : set) {
+			System.out.println(word);
+		}
 	}
 }
